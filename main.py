@@ -1,45 +1,27 @@
-def NumberofHouse(r, unit, arr):
-    rats=r*unit
-    count=0
-    count=1
-    if len(arr)==0:
-        return -1
-    elif:
-        for house in arr:
-            count+=house
-            count1+=1
-        if count<=rats:
-            return count1
-        else:
-            return 0:
-print(NumberofHouse(7,2,[2,8,3,5,4,1,2]))
-            
-        
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ip_dict,error_dict,url_dict={},{},{}
+def counting(item,dict1):
+    if item not in dict1:
+        dict1[item]=0
+    dict1[item]+=1
+def csv_file(reader):
+    for row in reader:
+        row=row.split(',')
+        ipaddress=row[0]
+        url=row[2]
+        error=row[3]
+        counting(ipaddress,ip_dict)
+        counting(url,url_dict)
+        counting(error,error_dict)
+    del ip_dict['IP']
+    del url_dict['URL']
+    del error_dict['Error Code\n']
+    print("IP's Count: ",ip_dict)
+    print("URL Count: ",url_dict)
+    print("Error Code Count: ",error_dict)
+    ip_list_values = list(ip_dict.values())
+    ip_list_keys = list(ip_dict.keys())
+    print("Highest reapeted ip address is: ", ip_list_keys[ip_list_values.index(max(ip_list_values))], "count is: ", max(ip_list_values),"times")
+    print("Lowest reapeted ip address is: ", ip_list_keys[ip_list_values.index(min(ip_list_values))], "count is: ", min(ip_list_values), "times")
+with open("C:\\Users\\Lenovo\\PycharmProjects\\pythonProject\\venv\\Scripts\\weblog.csv","r") as reader:
+    csv_file(reader)
 
