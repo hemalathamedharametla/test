@@ -25,3 +25,6 @@ def csv_file(reader):
 with open("C:\\Users\\Lenovo\\PycharmProjects\\pythonProject\\venv\\Scripts\\weblog.csv","r") as reader:
     csv_file(reader)
 
+    
+  # for testing 
+print("URL is opened successfully")
